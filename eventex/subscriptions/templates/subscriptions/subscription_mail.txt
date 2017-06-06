@@ -1,0 +1,11 @@
+Olá, sua inscrição foi realizada com sucesso!
+
+Segue abaixo os dados para confirmação.
+
+Nome: {{ name }}
+CPF: {{ cpf }}
+Email: {{ email }}
+Telefone: {{ phone }}
+
+Atenciosamente,
+Equipe Eventex

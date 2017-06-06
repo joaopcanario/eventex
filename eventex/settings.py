@@ -30,9 +30,9 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default=[], cast=Csv())
 
-AWS_STORAGE_BUCKET_NAME = config('S3_BUCKET_NAME', default='', cast=str)
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default='', cast=str)
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default='', cast=str)
+AWS_STORAGE_BUCKET_NAME = config('S3_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 
 
 # Application definition
@@ -100,7 +100,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -128,3 +128,12 @@ STATIC_URL = ''.join(['https://', AWS_S3_CUSTOM_DOMAIN, '/'])
 # Tell the staticfiles app to use S3Boto storage when writing
 # the collected static files (when you run `collectstatic`).
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+
+# Email configuration
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
