@@ -2,6 +2,9 @@
 
 Event system ordered by Morena.
 
+[![Build Status](https://travis-ci.org/joaopcanario/eventex.svg?branch=master)](https://travis-ci.org/joaopcanario/eventex)
+[![Code Health](https://landscape.io/github/joaopcanario/eventex/master/landscape.svg?style=flat)](https://landscape.io/github/joaopcanario/eventex/master)
+
 ## Development
 
 1. Clone this repo.
