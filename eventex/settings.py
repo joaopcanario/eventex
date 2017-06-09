@@ -34,6 +34,7 @@ AWS_STORAGE_BUCKET_NAME = config('S3_BUCKET_NAME')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 
+DEFAULT_FROM_EMAIL = 'contato@eventex.com.br'
 
 # Application definition
 
