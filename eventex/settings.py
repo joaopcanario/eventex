@@ -45,9 +45,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'storages',
     'eventex.core',
     'eventex.subscriptions',
-    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
