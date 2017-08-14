@@ -4,8 +4,8 @@ from django.test import TestCase
 
 class SubscribePostValid(TestCase):
     def setUp(self):
-        data = dict(name='João Paulo Canário', cpf='12345678901',
-                    email='jopacanario@gmail.com', phone='71-99953-8382')
+        data = dict(name='Joao Paulo Canario', cpf='12345678901',
+                    email='jopacanario@gmail.com', phone='71-999538382')
         self.client.post('/inscricao/', data)
         self.email = mail.outbox[0]
 
@@ -25,8 +25,8 @@ class SubscribePostValid(TestCase):
         self.assertEqual(expect, self.email.to)
 
     def test_subscription_email_body(self):
-        contents = ['João Paulo Canário', '12345678901',
-                    'jopacanario@gmail.com', '71-99953-8382']
+        contents = ['Joao Paulo Canario', '12345678901',
+                    'jopacanario@gmail.com', '71-999538382']
         for content in contents:
             with self.subTest():
                 self.assertIn(content, self.email.body)

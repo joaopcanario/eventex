@@ -1,11 +1,15 @@
 Olá, sua inscrição foi realizada com sucesso!
 
-Segue abaixo os dados para confirmação.
+Estes foram os dados que você nos forneceu em sua inscrição:
 
-Nome: {{ name }}
-CPF: {{ cpf }}
-Email: {{ email }}
-Telefone: {{ phone }}
+Nome: {{ subscription.name }}
+CPF: {{ subscription.cpf }}
+Email: {{ subscription.email }}
+Telefone: {{ subscription.phone }}
+
+Em até 48 horas, a nossa equipe entrará
+em contato com você para concluirmos
+a sua matrícula.
 
 Atenciosamente,
 Equipe Eventex
