@@ -42,13 +42,15 @@ class SubscribeGet(TestCase):
 
 class SubscribePostValid(TestCase):
     def setUp(self):
-        data = dict(name='João Paulo Canário', cpf='12345678901',
+        data = dict(name='Joao Paulo Canario', cpf='12345678901',
                     email='jopacanario@gmail.com', phone='71-999538382')
         self.resp = self.client.post('/inscricao/', data)
 
     def test_post(self):
-        """Valid POST should redirect to /inscricao/1/"""
-        self.assertRedirects(self.resp, '/inscricao/1/')
+        """Valid POST should redirect to /inscricao/?P<pk>[^/]+/"""
+        subscription = Subscription.objects.get(name='Joao Paulo Canario')
+
+        self.assertRedirects(self.resp, f'/inscricao/{subscription.pk}/')
 
     def test_send_subscribe_email(self):
         self.assertEqual(1, len(mail.outbox))

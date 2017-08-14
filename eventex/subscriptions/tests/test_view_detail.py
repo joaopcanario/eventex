@@ -1,3 +1,5 @@
+import uuid
+
 from django.test import TestCase
 from eventex.subscriptions.models import Subscription
 
@@ -35,5 +37,5 @@ class SubscriptionDetailGet(TestCase):
 
 class SubscriptionDetailNotFound(TestCase):
     def test_not_found(self):
-        resp = self.client.get('/inscricao/0/')
+        resp = self.client.get(f'/inscricao/{str(uuid.uuid4())}/')
         self.assertEqual(404, resp.status_code)
