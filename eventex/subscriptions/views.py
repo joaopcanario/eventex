@@ -31,7 +31,7 @@ def create(request):
                template_name='subscriptions/subscription_mail.txt',
                context={'subscription': subscription})
 
-    return HttpResponseRedirect(f'/inscricao/{subscription.pk}/')
+    return HttpResponseRedirect('/inscricao/{}/'.format(subscription.pk))
 
 
 def new(request):
